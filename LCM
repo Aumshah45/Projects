@@ -1,0 +1,23 @@
+#include <stdio.h>
+long gcd(long x, long y);
+int main()
+{
+    int Num1, Num2, GCD, LCM;
+
+    printf("Please Enter two integer Values \n");
+    scanf("%d %d", &Num1, &Num2);
+
+    GCD = gcd(Num1, Num2);
+    LCM = (Num1 * Num2) / GCD;
+    printf("LCM of %d and %d is = %d", Num1, Num2, LCM);
+    return 0;
+}
+long gcd(long x, long y) 
+{
+  if (y == 0) {
+  	return x;
+  }
+  else {
+    return gcd(y, x % y);
+  }
+}
